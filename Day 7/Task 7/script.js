@@ -1,6 +1,6 @@
 
 // ============================================================
-// NTI Mini Store - Day 7 - GUI with DOM (No CSS file)
+// NTI Mini Store - Day 7 - GUI with DOM
 // ============================================================
 
 var products = [

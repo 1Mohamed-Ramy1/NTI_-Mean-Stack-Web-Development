@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTI Mini Store - Day 7 with DOM</title>
+</head>
+<body>
+  <table width="100%" cellpadding="10" cellspacing="0" border="0">
+    <tr>
+      <td>
+        <div id="app">
+          <header id="pageHeader">
+            <h1>🏪 NTI Mini Store</h1>
+            <p>Manage your products with a beautiful GUI interface</p>
+            <hr>
+          </header>
+
+          <section id="statsSection">
+            <h2>Statistics</h2>
+            <table width="100%" cellpadding="8" cellspacing="4" border="0">
+              <tr>
+                <td>
+                  <h3>Total Products</h3>
+                  <p id="statProductCount" class="stat-number">0</p>
+                </td>
+                <td>
+                  <h3>Total Stock Value</h3>
+                  <p id="statTotalValue" class="stat-number">0 EGP</p>
+                </td>
+                <td>
+                  <h3>Average Price</h3>
+                  <p id="statAvgPrice" class="stat-number">0 EGP</p>
+                </td>
+                <td>
+                  <h3>Out of Stock</h3>
+                  <p id="statOutOfStock" class="stat-number">0</p>
+                </td>
+              </tr>
+            </table>
+          </section>
+
+          <section id="formSection">
+            <h2>Add New Product</h2>
+            <div class="form-group">
+              <label for="productName">Product Name:</label><br>
+              <input type="text" id="productName" placeholder="e.g., Laptop">
+            </div>
+            <div class="form-group">
+              <label for="productPrice">Price (EGP):</label><br>
+              <input type="number" id="productPrice" placeholder="e.g., 18500" min="0.01" step="0.01">
+            </div>
+            <div class="form-group">
+              <label for="productCategory">Category:</label><br>
+              <input type="text" id="productCategory" placeholder="e.g., Electronics">
+            </div>
+            <div class="form-group">
+              <label for="productQuantity">Quantity:</label><br>
+              <input type="number" id="productQuantity" placeholder="e.g., 10" min="0" step="1">
+            </div>
+            <br>
+            <button id="addProductBtn">Add Product</button>
+            <div id="formMessage"></div>
+          </section>
+
+          <section id="filterSection">
+            <h2>Search &amp; Filter</h2>
+            <div class="filter-group">
+              <input type="text" id="searchInput" placeholder="Search by name or category...">
+              <button id="searchBtn">Search</button>
+              <button id="resetSearchBtn">Reset</button>
+            </div>
+            <br>
+            <div class="filter-group">
+              <label for="sortOrder">Sort by Price:</label>
+              <select id="sortOrder">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+              </select>
+              <button id="sortBtn">Sort</button>
+            </div>
+            <br>
+            <div class="filter-group">
+              <label for="categoryFilter">Filter by Category:</label>
+              <select id="categoryFilter">
+                <option value="">All Categories</option>
+              </select>
+              <button id="filterBtn">Filter</button>
+            </div>
+          </section>
+
+          <section id="productsSection">
+            <h2>Products List</h2>
+            <div id="tableWrapper">
+              <table id="productsTable" width="100%" cellpadding="6" cellspacing="0" border="1">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price (EGP)</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Stock Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="productsTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <div id="editModal">
+            <div id="modalContent">
+              <div id="modalHeader">
+                <h2>Edit Product</h2>
+                <span id="closeModalBtn" aria-label="Close modal">&times;</span>
+              </div>
+              <div id="modalBody">
+                <input type="hidden" id="editProductId">
+                <div class="form-group">
+                  <label for="editProductName">Product Name:</label><br>
+                  <input type="text" id="editProductName">
+                </div>
+                <div class="form-group">
+                  <label for="editProductPrice">Price (EGP):</label><br>
+                  <input type="number" id="editProductPrice" min="0.01" step="0.01">
+                </div>
+                <div class="form-group">
+                  <label for="editProductCategory">Category:</label><br>
+                  <input type="text" id="editProductCategory">
+                </div>
+                <div class="form-group">
+                  <label for="editProductQuantity">Quantity:</label><br>
+                  <input type="number" id="editProductQuantity" min="0" step="1">
+                </div>
+                <div id="editMessage"></div>
+              </div>
+              <div id="modalFooter">
+                <button id="cancelEditBtn">Cancel</button>
+                <button id="saveEditBtn">Save Changes</button>
+              </div>
+            </div>
+          </div>
+
+          <section id="groupsSection">
+            <h2>Products by Category</h2>
+            <div id="categoryGroups"></div>
+          </section>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 15 - Closure Bug Fix</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Task 15: Closure Bug Fix</h1>
+        
+        <div class="description">
+            <strong>Question:</strong> Fix this bug by changing only var to let, then explain why it works:
+            <pre>const handlers = {};
+for (var i = 0; i < 3; i++) {
+    handlers["fn" + i] = function () {
+        return "index: " + i;
+    };
+}</pre>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

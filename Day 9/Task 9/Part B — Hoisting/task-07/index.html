@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7 - Complex Hoisting</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Task 7: Hoisting with Function Scope</h1>
+        
+        <div class="description">
+            <strong>Question:</strong> Predict the output:
+            <pre>var n = 1;
+function demo() {
+    console.log(n);
+    var n = 2;
+    console.log(n);
+}
+demo();
+console.log(n);</pre>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

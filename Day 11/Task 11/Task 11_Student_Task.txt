@@ -1,0 +1,2 @@
+ 1) create custom module
+ 2) calling four apis at least and use Dom (get , post , put , delete) by using XHR
